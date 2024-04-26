@@ -1,0 +1,7 @@
+tqdm
+numpy
+matplotlib
+pandas
+scikit-image
+pillow==10.2.0
+wget
