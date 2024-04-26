@@ -23,7 +23,12 @@ RUN python3 -m pip install --upgrade pip
 RUN pip3 install torch torchvision torchaudio -f https://download.pytorch.org/whl/cu111/torch_stable.html
 
 # create the working directory
+WORKDIR /root
 RUN mkdir codespace
+WORKDIR /root/codespace
+
+# download 
+RUN git clone --depth=2 --recursive  https://github.com/jason-tadsilva/karpathy-llm.c.git
 
 # set the entrypoint
 ENTRYPOINT [ "python3" ]
