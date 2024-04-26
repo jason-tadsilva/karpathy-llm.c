@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.0.3-base-ubuntu20.04
+FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04
 
 # set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -23,7 +23,7 @@ RUN python3 -m pip install --upgrade pip
 RUN pip3 install torch torchvision torchaudio -f https://download.pytorch.org/whl/cu111/torch_stable.html
 
 # create the working directory
-RUN mkdir -p /codespace
+RUN mkdir codespace
 
 # set the entrypoint
 ENTRYPOINT [ "python3" ]

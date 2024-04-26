@@ -23,3 +23,19 @@ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
 sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
 ```
+
+### Q: ERROR 
+
+docker: nvcc not found, skipping CUDA builds
+
+**A:** 
+
+To get access to the CUDA development tools, you should use the `devel` images instead.
+
+```bash
+# modify Dockerfile
+FROM nvidia/cuda:11.0.3-base-ubuntu20.04
+# by 
+FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04
+
+```
