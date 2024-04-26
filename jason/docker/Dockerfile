@@ -30,5 +30,8 @@ WORKDIR /root/codespace
 # download 
 RUN git clone --depth=2 --recursive  https://github.com/jason-tadsilva/karpathy-llm.c.git
 
+# rename code
+RUN mv karpathy-llm.c llm
+
 # set the entrypoint
 ENTRYPOINT [ "python3" ]

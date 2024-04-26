@@ -5,4 +5,4 @@ sudo docker build -t pytorch-gpu . -f Dockerfile
 sudo docker run --name pytorch-container --gpus all -it pytorch-gpu 
 
 # exec the docker
-docker exec -it image_id bash
+docker exec -it container_id bash
